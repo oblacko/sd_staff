@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>sd_staff</id>
+    <auto_install>MULTIVENDOR,ULTIMATE</auto_install>
+    <default_language>ru</default_language>
+    <status>active</status>
+    <queries>
+        <item for="install">
+            CREATE TABLE `?:sd_staff` (
+            `staff_id` mediumint(8) UNSIGNED NOT NULL auto_increment,
+            `firstname` varchar(128) NOT NULL DEFAULT '',
+            `lastname` varchar(128) NOT NULL DEFAULT '',
+            `function` varchar(128) NOT NULL DEFAULT '',
+            `email` varchar(128) NOT NULL DEFAULT '',
+            `phone` varchar(128) NOT NULL DEFAULT '',
+            `description` varchar(255) NOT NULL DEFAULT '',
+            `status` char(1) NOT NULL default 'A',
+            PRIMARY KEY  (`staff_id`)
+            ) ENGINE=MyISAM DEFAULT CHARSET=UTF8
+        </item>
+        <item for="uninstall">DROP TABLE IF EXISTS `?:sd_staff`</item>
+    </queries>
+</addon>
